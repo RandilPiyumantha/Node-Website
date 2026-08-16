@@ -1,0 +1,479 @@
+/* =========================================================
+   NODE GLOBAL LOGISTICS — SERVICES PAGE
+   Loads after styles.css and contains only Services-specific rules.
+========================================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+
+  background-image: url("images/index_img_2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-image-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  text-align: center;
+  background: linear-gradient(135deg, #1d3552 0%, #17466e 48%, #9b7740 100%);
+  color: rgba(255,255,255,0.38);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hero-image-placeholder small {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.small-icon-placeholder,
+.process-icon-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.small-icon-placeholder {
+  width: 50px;
+  height: 50px;
+  margin-inline: auto;
+  /*border: 1px dashed rgba(11,45,99,0.3);*/
+  /*border-radius: 10px;*/
+  /*background: rgba(11,45,99,0.035);*/
+  color: var(--navy);
+  font-size: 0.58rem;
+}
+
+.gold-icon {
+  color: var(--gold);
+  /*border-color: rgba(199,154,59,0.65);
+  background: rgba(199,154,59,0.05);*/
+}
+
+.process-icon-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.6rem;
+}
+
+/* Core services */
+.intro-section {
+  padding-bottom: 20px;
+}
+
+.services-section {
+  padding: 10px 0 75px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  padding: 32px 24px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.service-card h3 {
+  text-align: center;
+  color: var(--navy);
+  font-size: 1.35rem;
+  text-transform: uppercase;
+}
+
+.service-summary {
+  min-height: 95px;
+  margin-top: 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.87rem;
+}
+
+.check-list {
+  list-style: none;
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 20px;
+  color: #3e4859;
+  font-size: 0.84rem;
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+/* Import / Export */
+.import-export {
+  background: linear-gradient(180deg, #eef4fa 0%, #f7f8fb 100%);
+}
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.flow-panel {
+  padding: 0 34px;
+}
+
+.flow-panel:first-child {
+  border-right: 1px solid #ccd7e4;
+}
+
+.flow-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.flow-header h3 {
+  color: var(--navy);
+  text-transform: uppercase;
+  font-size: 1.45rem;
+}
+
+.flow-header p {
+  max-width: 430px;
+  margin: 5px auto 0;
+  color: var(--muted);
+  font-size: 0.87rem;
+}
+
+.flow-line {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.flow-step {
+  width: 90px;
+  text-align: center;
+}
+
+.flow-step span {
+  display: block;
+  margin-top: 9px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.arrow {
+  margin: 14px 4px 0;
+  color: var(--gold);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+/* Additional services */
+.additional-services {
+  padding-bottom: 48px;
+}
+
+.additional-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.additional-item {
+  min-height: 155px;
+  padding: 10px 17px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.additional-item:last-child {
+  border-right: 0;
+}
+
+.additional-item .small-icon-placeholder {
+  margin-bottom: 12px;
+}
+
+.additional-item h3 {
+  color: var(--navy);
+  font-size: 0.93rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* How we work */
+.how-we-work {
+  padding-top: 45px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.process-step {
+  position: relative;
+  text-align: center;
+}
+
+.process-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 46px;
+  left: 70%;
+  width: 73%;
+  border-top: 2px dotted rgba(199,154,59,0.7);
+  z-index: 0;
+}
+
+.process-circle {
+  position: relative;
+  z-index: 1;
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  background: var(--navy);
+}
+
+.process-circle > span {
+  position: absolute;
+  top: -10px;
+  right: -4px;
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--white);
+  font-family: "Oswald", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.process-step h3 {
+  min-height: 46px;
+  color: var(--navy);
+  font-size: 1rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.process-step p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.77rem;
+}
+
+/* Quote requirements */
+.quote-band {
+  padding: 0 0 62px;
+}
+
+.quote-band-layout {
+  padding: 26px 28px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 30px;
+  border-radius: 6px;
+  background: linear-gradient(105deg, var(--navy-dark) 0%, var(--navy) 60%, #113f78 100%);
+  box-shadow: 0 14px 34px rgba(4,30,65,0.18);
+  color: var(--white);
+}
+
+.quote-band h2 {
+  margin-bottom: 13px;
+  font-size: 1.65rem;
+  text-transform: uppercase;
+}
+
+.quote-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(130px, 1fr));
+  gap: 8px 22px;
+}
+
+.quote-list span {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.77rem;
+}
+
+.quote-list span::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--gold-light);
+  font-weight: 800;
+}
+
+.quote-band-button {
+  min-width: 220px;
+}
+
+/* Why Node */
+.why-node {
+  padding-top: 10px;
+  padding-bottom: 60px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.why-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.why-item .small-icon-placeholder {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.why-item h3 {
+  color: var(--navy);
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+}
+
+.why-item p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1100px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-summary {
+    min-height: auto;
+  }
+
+  .additional-grid {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 28px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 45px;
+  }
+
+  .process-step:not(:last-child)::after {
+    display: none;
+  }
+
+  .quote-band-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-band-button {
+    justify-self: start;
+  }
+
+  .quote-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 820px) {
+  .flow-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .flow-panel:first-child {
+    border-right: 0;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #ccd7e4;
+  }
+}
+
+@media (max-width: 620px) {
+  .service-grid,
+  .additional-grid,
+  .process-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .additional-item {
+    min-height: auto;
+    padding: 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .flow-panel {
+    padding-inline: 0;
+  }
+
+  .flow-line {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .flow-step {
+    width: 150px;
+  }
+
+  .arrow {
+    margin: 0;
+    transform: rotate(90deg);
+  }
+
+  .quote-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 440px) {
+  .quote-list {
+    grid-template-columns: 1fr;
+  }
+}
