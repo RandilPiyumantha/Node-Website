@@ -279,11 +279,17 @@
           <small>Our team will review your requirements and get back to you with a suitable logistics solution.</small>
         </div>
 
-        <form class="quote-form" action="#" method="post">
+        <form
+          class="quote-form"
+          action="https://formspree.io/f/xrpzrqdn"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="New Freight Quote Request - Node Global Logistics">
+          <input type="hidden" name="form_type" value="Freight Quote Request">
           <div class="form-group">
             <label for="shipment-type">Shipment Type</label>
-            <select id="shipment-type" name="shipment-type">
-              <option>Select</option>
+            <select id="shipment-type" name="shipment_type" required>
+              <option value="" selected disabled>Select</option>
               <option>Sea Freight</option>
               <option>Air Freight</option>
             </select>
@@ -291,8 +297,8 @@
 
           <div class="form-group">
             <label for="movement">Movement</label>
-            <select id="movement" name="movement">
-              <option>Select</option>
+            <select id="movement" name="movement" required>
+              <option value="" selected disabled>Select</option>
               <option>Import</option>
               <option>Export</option>
             </select>
@@ -300,37 +306,37 @@
 
           <div class="form-group">
             <label for="origin">Origin</label>
-            <input id="origin" name="origin" type="text" placeholder="City / Port / Country">
+            <input id="origin" name="origin" type="text" placeholder="City / Port / Country" required>
           </div>
 
           <div class="form-group">
             <label for="destination">Destination</label>
-            <input id="destination" name="destination" type="text" placeholder="City / Port / Country">
+            <input id="destination" name="destination" type="text" placeholder="City / Port / Country" required>
           </div>
 
           <div class="form-group">
             <label for="cargo">Cargo Description</label>
-            <input id="cargo" name="cargo" type="text" placeholder="Enter cargo description">
+            <input id="cargo" name="cargo_description" type="text" placeholder="Enter cargo description" required>
           </div>
 
           <div class="form-group">
             <label for="weight">Weight / Volume</label>
-            <input id="weight" name="weight" type="text" placeholder="Enter weight or volume">
+            <input id="weight" name="weight_volume" type="text" placeholder="Enter weight or volume">
           </div>
 
           <div class="form-group">
             <label for="container">Container Type or Dimensions</label>
-            <input id="container" name="container" type="text" placeholder="e.g. 20ft, 40ft, dimensions">
+            <input id="container" name="container_type_dimensions" type="text" placeholder="e.g. 20ft, 40ft, dimensions">
           </div>
 
           <div class="form-group">
             <label for="date">Expected Shipping Date</label>
-            <input id="date" name="date" type="date">
+            <input id="date" name="expected_shipping_date" type="date">
           </div>
 
           <div class="form-group">
             <label for="name">Your Name</label>
-            <input id="name" name="name" type="text" placeholder="Enter your name">
+            <input id="name" name="name" type="text" placeholder="Enter your name" required>
           </div>
 
           <div class="form-group">
@@ -340,17 +346,17 @@
 
           <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="Enter email address">
+            <input id="email" name="email" type="email" placeholder="Enter email address" required>
           </div>
 
           <div class="form-group">
             <label for="phone">Phone / WhatsApp</label>
-            <input id="phone" name="phone" type="tel" placeholder="Enter phone number">
+            <input id="phone" name="phone_whatsapp" type="tel" placeholder="Enter phone number">
           </div>
 
           <div class="form-group form-group-full">
             <label for="details">Additional Details</label>
-            <textarea id="details" name="details" rows="4" placeholder="Anything else we should know?"></textarea>
+            <textarea id="details" name="additional_details" rows="4" placeholder="Anything else we should know?"></textarea>
           </div>
 
           <div class="form-submit">
