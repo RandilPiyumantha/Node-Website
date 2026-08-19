@@ -1,17 +1,19 @@
-export async function onRequestQuote(context) {
+export async function onRequestPost(context) {
   try {
-    const formdata = await context.request.formData();
-    const data = Object.fromEntries(formdata.entries());
+    const formData = await context.request.formData();
+
+    const data = Object.fromEntries(formData.entries());
+
     return Response.json({
       success: true,
-      message: "Quote fetched successfully",
+      message: "Quote request received.",
       data,
     });
   } catch (error) {
     return Response.json(
       {
         success: false,
-        message: "Failed to fetch quote",
+        message: "Unable to process quote request.",
       },
       {
         status: 400,
