@@ -1,23 +1,3 @@
-export async function onRequestPost(context) {
-  try {
-    const formData = await context.request.formData();
-
-    const data = Object.fromEntries(formData.entries());
-
-    return Response.json({
-      success: true,
-      message: "Quote request received.",
-      data,
-    });
-  } catch (error) {
-    return Response.json(
-      {
-        success: false,
-        message: "Unable to process quote request.",
-      },
-      {
-        status: 400,
-      },
-    );
-  }
+export async function onRequest() {
+  return new Response("Node Global quote function is working!");
 }
