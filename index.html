@@ -280,6 +280,7 @@
         </div>
 
         <form
+          id="quoteForm"
           class="quote-form"
           action="/api/quote"
           method="POST"
@@ -361,6 +362,7 @@
 
           <div class="form-submit">
             <button type="submit" class="btn btn-primary">Request a Quote <span>→</span></button>
+            <div id="quoteMessage" class="quote-message"></div>   
           </div>
         </form>
       </div>
@@ -469,6 +471,58 @@
     toggle.addEventListener('click', () => {
       links.classList.toggle('open');
     });
+  </script>
+
+  <script>
+  const quoteForm = document.getElementById("quoteForm");
+  const quoteMessage = document.getElementById("quoteMessage");
+
+  quoteForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const submitButton = quoteForm.querySelector('button[type="submit"]');
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+
+    quoteMessage.textContent = "";
+    quoteMessage.className = "quote-message";
+
+    try {
+      const formData = new FormData(quoteForm);
+
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.message || "Unable to send your quote request."
+        );
+      }
+
+      quoteMessage.textContent =
+        "Thank you. Your quote request has been submitted successfully. Our team will contact you shortly.";
+
+      quoteMessage.classList.add("success");
+
+      quoteForm.reset();
+
+    } catch (error) {
+      quoteMessage.textContent =
+        error.message ||
+        "Something went wrong. Please try again.";
+
+      quoteMessage.classList.add("error");
+
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Request a Quote →";
+    }
+  });
   </script>
 </body>
 </html>

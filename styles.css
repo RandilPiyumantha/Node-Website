@@ -1,8 +1,8 @@
 :root {
-  --navy: #0B2D63;
+  --navy: #0b2d63;
   --navy-dark: #061f48;
   --navy-deep: #041731;
-  --gold: #C79A3B;
+  --gold: #c79a3b;
   --gold-light: #ddae4c;
   --white: #ffffff;
   --off-white: #f7f8fb;
@@ -67,8 +67,11 @@ textarea {
   justify-content: center;
   text-align: center;
   border: 1px solid rgba(199, 154, 59, 0.72);
-  background:
-    linear-gradient(135deg, rgba(199, 154, 59, 0.07), rgba(11, 45, 99, 0.08));
+  background: linear-gradient(
+    135deg,
+    rgba(199, 154, 59, 0.07),
+    rgba(11, 45, 99, 0.08)
+  );
   color: var(--gold);
   font-size: 0.72rem;
   font-weight: 700;
@@ -94,7 +97,7 @@ textarea {
 
 .icon-placeholder-light {
   border-color: rgba(199, 154, 59, 0.9);
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .hero {
@@ -128,8 +131,6 @@ textarea {
   z-index: 2;
 }
 
-
-
 .hero-bg-placeholder {
   position: absolute;
   inset: 0;
@@ -138,9 +139,8 @@ textarea {
   gap: 7px;
   border: 0;
   border-radius: 0;
-  background:
-    linear-gradient(135deg, #162c45 0%, #0a3562 45%, #9c7838 100%);
-  color: rgba(255,255,255,0.4);
+  background: linear-gradient(135deg, #162c45 0%, #0a3562 45%, #9c7838 100%);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 1.2rem;
 }
 
@@ -156,8 +156,12 @@ textarea {
   max-width: 320px;
   width: 100%;
   margin-inline: auto;
-  background:
-    radial-gradient(circle at 40% 35%, #f5f7fb 0%, #dbe5ef 35%, #9db6ce 100%);
+  background: radial-gradient(
+    circle at 40% 35%,
+    #f5f7fb 0%,
+    #dbe5ef 35%,
+    #9db6ce 100%
+  );
   color: var(--navy);
   border: 2px dashed rgba(11, 45, 99, 0.25);
 }
@@ -174,8 +178,6 @@ textarea {
   color: var(--navy);
   z-index: 0;
 }
-
-
 
 /* =========================
    TYPOGRAPHY
@@ -238,8 +240,13 @@ h3,
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(2, 21, 48, 0.95) 0%, rgba(4, 31, 69, 0.74) 43%, rgba(4, 31, 69, 0.1) 85%),
-    linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+    linear-gradient(
+      90deg,
+      rgba(2, 21, 48, 0.95) 0%,
+      rgba(4, 31, 69, 0.74) 43%,
+      rgba(4, 31, 69, 0.1) 85%
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   z-index: 1;
 }
 
@@ -294,8 +301,6 @@ h3,
   color: var(--gold-light);
 }
 
-
-
 .nav-toggle {
   display: none;
   border: 0;
@@ -344,7 +349,7 @@ h3,
 .hero-subcopy {
   max-width: 610px;
   margin-top: 11px;
-  color: rgba(255,255,255,0.84);
+  color: rgba(255, 255, 255, 0.84);
 }
 
 .hero-actions {
@@ -384,12 +389,12 @@ h3,
 
 .btn-outline {
   color: var(--white);
-  border-color: rgba(255,255,255,0.8);
-  background: rgba(0,0,0,0.08);
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .btn-outline:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .btn-small {
@@ -397,7 +402,6 @@ h3,
   padding-inline: 17px;
   margin-top: 20px;
 }
-
 
 /* =========================
    SHARED SUBPAGE HERO
@@ -410,8 +414,13 @@ h3,
 
 .subpage-hero .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(2, 21, 48, 0.96) 0%, rgba(4, 31, 69, 0.78) 47%, rgba(4, 31, 69, 0.18) 84%),
-    linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.18));
+    linear-gradient(
+      90deg,
+      rgba(2, 21, 48, 0.96) 0%,
+      rgba(4, 31, 69, 0.78) 47%,
+      rgba(4, 31, 69, 0.18) 84%
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.18));
 }
 
 .subpage-hero .hero-content {
@@ -445,7 +454,9 @@ h3,
   box-shadow: var(--shadow);
   text-align: center;
   background: var(--white);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .service-card:hover {
@@ -482,8 +493,12 @@ h3,
 .why-us {
   padding: 55px 0 60px;
   color: var(--white);
-  background:
-    radial-gradient(circle at 50% 0%, #164b88 0%, var(--navy) 44%, var(--navy-dark) 100%);
+  background: radial-gradient(
+    circle at 50% 0%,
+    #164b88 0%,
+    var(--navy) 44%,
+    var(--navy-dark) 100%
+  );
 }
 
 .section-heading-light {
@@ -517,7 +532,7 @@ h3,
 }
 
 .feature-item p {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.83rem;
 }
 
@@ -533,7 +548,6 @@ h3,
   background-repeat: no-repeat;
   overflow: hidden;
 }
-
 
 .trade-layout {
   display: grid;
@@ -668,11 +682,11 @@ h3,
 }
 
 .quote-section .section-heading p {
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .quote-section .section-heading small {
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .quote-form {
@@ -681,10 +695,15 @@ h3,
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
-  background: rgba(255,255,255,0.96);
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid #dde3ea;
   border-radius: 5px;
   box-shadow: var(--shadow);
+}
+
+.quote-form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
 .form-group {
@@ -729,6 +748,30 @@ h3,
   padding-top: 4px;
 }
 
+.quote-message {
+  margin-top: 18px;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: none;
+}
+
+.quote-message.success {
+  display: block;
+  padding: 14px 18px;
+  border-left: 4px solid #c79a3b;
+  background: #f7f9fc;
+  color: #0b2d63;
+}
+
+.quote-message.error {
+  display: block;
+  padding: 14px 18px;
+  border-left: 4px solid #b42318;
+  background: #fff5f5;
+  color: #b42318;
+}
+
 /* =========================
    SHARED SITE CTA
 ========================== */
@@ -740,8 +783,8 @@ h3,
   align-items: center;
   background: var(--navy);
   color: var(--white);
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .site-cta-layout,
@@ -775,7 +818,7 @@ h3,
 .site-cta p {
   max-width: 650px;
   margin-top: 0;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 0.85rem;
 }
 
@@ -813,7 +856,7 @@ h3,
 
 .footer-brand > p {
   margin-top: 15px;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 0.82rem;
 }
 
@@ -847,7 +890,7 @@ h3,
 .footer-links a,
 .contact-list,
 .hours {
-  color: rgba(255,255,255,0.73);
+  color: rgba(255, 255, 255, 0.73);
   font-size: 0.78rem;
 }
 
@@ -880,10 +923,10 @@ h3,
 }
 
 .copyright {
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding: 14px 20px;
   text-align: center;
-  color: rgba(255,255,255,0.67);
+  color: rgba(255, 255, 255, 0.67);
   font-size: 0.72rem;
 }
 
@@ -976,7 +1019,7 @@ h3,
     gap: 0;
     padding: 16px 20px 22px;
     background: rgba(4, 23, 49, 0.98);
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .nav-links.open {
