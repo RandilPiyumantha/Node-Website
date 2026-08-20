@@ -174,7 +174,7 @@
               </p>
             </div>
 
-            <form class="contact-form" action="#" method="post">
+            <form id="contactForm" class="contact-form" action="/api/contact" method="post">
 
               <div class="form-group">
                 <label for="contact-name">Name <span>*</span></label>
@@ -220,7 +220,7 @@
 
               <div class="form-group form-group-full">
                 <label for="enquiry-type">Enquiry Type</label>
-                <select id="enquiry-type" name="enquiry-type">
+                <select id="enquiry-type" name="enquiry_type">
                   <option value="">Select enquiry type</option>
                   <option>General Enquiry</option>
                   <option>Sea Freight</option>
@@ -249,6 +249,7 @@
                 <button type="submit" class="btn btn-primary">
                   Send Message <span>→</span>
                 </button>
+                <div id="contactMessage" class="contact-message"></div>
               </div>
 
             </form>
@@ -444,6 +445,98 @@
       links.classList.toggle('open');
     });
   </script>
+
+  <script>
+    const contactForm =
+      document.getElementById("contactForm");
+
+    const contactMessage =
+      document.getElementById("contactMessage");
+
+    contactForm.addEventListener(
+      "submit",
+      async function (event) {
+
+        event.preventDefault();
+
+        const submitButton =
+          contactForm.querySelector(
+            'button[type="submit"]'
+          );
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        contactMessage.textContent = "";
+        contactMessage.className =
+          "contact-message";
+
+        try {
+
+          const formData =
+            new FormData(contactForm);
+
+          const response =
+            await fetch(
+              "/api/contact",
+              {
+                method: "POST",
+                body: formData
+              }
+            );
+
+          const result =
+            await response.json();
+
+          if (
+            !response.ok ||
+            !result.success
+          ) {
+            throw new Error(
+              result.message ||
+              "Unable to send your message."
+            );
+          }
+
+          contactMessage.textContent =
+            "Thank you. Your message has been sent successfully. Our team will contact you shortly.";
+
+          contactMessage.classList.add(
+            "success"
+          );
+
+          contactMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+          contactForm.reset();
+
+        } catch (error) {
+
+          contactMessage.textContent =
+            error.message ||
+            "Something went wrong. Please try again.";
+
+          contactMessage.classList.add(
+            "error"
+          );
+
+          contactMessage.scrollIntoView({
+            behavior: "smooth",
+          block: "center"
+        });
+
+        } finally {
+
+          submitButton.disabled = false;
+          submitButton.innerHTML =
+            'Send Message <span>→</span>';
+
+        }
+      }
+    );
+</script>
 
 </body>
 </html>
